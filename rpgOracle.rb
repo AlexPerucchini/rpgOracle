@@ -4,7 +4,7 @@
 # author alex.perucchini
 # randomizes RPG elements for solo play
 # requires: https://github.com/piotrmurach/
-require "./Oracles"
+require "./source/Oracles"
 require "tty-prompt"
 
 prompt = TTY::Prompt.new
@@ -19,6 +19,7 @@ begin
       menu.choice 'Combat ', -> { combat }
       menu.choice 'Goal', -> { goal }
       menu.choice 'Theme', -> { theme }
+      menu.choice 'Twist', -> { twist }
       menu.choice 'Quit' , -> { exit }
     end
     puts "===================================================================================="

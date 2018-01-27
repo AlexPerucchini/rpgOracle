@@ -3,7 +3,7 @@
 # included in rpgOracle.rb
 ########################################
  
-require "./Oracle"
+require "./source/Oracle"
 
 def theme
   puts "ORACLE: THEME
@@ -42,6 +42,15 @@ def combat
   roll on this table and interpret the result as appropriate to your foe and the situation."
 
   o = Oracle.new('Combat')
+  puts o.get_oracle
+end
+
+def twist
+  puts "ORACLE: twist 
+  Use this oracle to introduce a narrative surprise or revelation. 
+  That is your cue to make something dramatic happen."
+
+  o = Oracle.new('Twist')
   puts o.get_oracle
 end
 

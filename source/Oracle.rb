@@ -12,9 +12,9 @@ class Oracle
 
   def get_oracle
     begin
-      db = SQLite3::Database.open "rpgOracle.db"
-      stm = db.prepare "SELECT name FROM #{@name}" 
-      rs = stm.execute 
+      db = SQLite3::Database.open "./database/rpgOracle.db"
+      stm = db.prepare "SELECT name FROM #{@name}"
+      rs = stm.execute   
       
       #take the result-set convert to an array and randomize the output
       return "#{@name.upcase}#{rs.to_a.sample}"
