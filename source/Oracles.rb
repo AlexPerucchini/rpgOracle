@@ -5,52 +5,87 @@
  
 require "./source/Oracle"
 
-def theme
-  puts "ORACLE: THEME
-  As with the Action oracle, this is an interpretative table which you can use to answer questions 
-  or generate new situations. Combined, the Action and Theme tables provide creative prompts suitable 
-  for most situations and questions. In fact, with some creative interpretations, it’s entirely possible 
-  to play with only these two tables."
-
-  o = Oracle.new('Theme')
-  puts o.get_oracle
-end
-
-def action
-  puts "ORACLE: ACTION 
+def action_theme
+  puts "ORACLE: Theme and Action
   Use this table to inspire a discovery, event, character goal, or situation. A roll on this table 
-  can be combined with a Theme (see below) to provide an action and a subject. Then, interpret the 
+  can be combined with a Theme to provide an action and a subject. Then, interpret the 
   result based on the context of the question and your current situation."
 
-  o = Oracle.new('Action')
-  puts o.get_oracle
+  a = Oracle.new('Action')
+  puts a.call_oracle
+
+  t = Oracle.new('Theme')
+  puts t.call_oracle
 end
 
 def goal
-  puts "ORACLE: GOAL 
+  puts "ORACLE: Goal
   Use this oracle to define the primary motivation of an NPC or a faction. It can also be used 
   to kick-off a personal quest for your own character."
 
   o = Oracle.new('Goal')
-  puts o.get_oracle
+  puts o.call_oracle
 end
 
 def combat
-  puts "ORACLE: COMBAT 
+  puts "ORACLE: Combat 
   Use this oracle to help inspire an action for an NPC in combat. 
   When you’re not sure what your foe will do next, particularly when they have initiative, 
   roll on this table and interpret the result as appropriate to your foe and the situation."
 
   o = Oracle.new('Combat')
-  puts o.get_oracle
+  puts o.call_oracle
 end
 
 def twist
-  puts "ORACLE: twist 
+  puts "ORACLE: Twist 
   Use this oracle to introduce a narrative surprise or revelation. 
   That is your cue to make something dramatic happen."
 
   o = Oracle.new('Twist')
-  puts o.get_oracle
+  puts o.call_oracle
 end
 
+def mystic_backlash
+  puts "ORACLE: Mystic Backlash 
+  Those who deal in magic may find themselves at the mercy of chaos."
+
+  o = Oracle.new('Mystic_Backlash')
+  puts o.call_oracle
+end
+
+def npc_reaction
+  puts "ORACLE: NPCs or Monster Reaction"
+
+  reaction = [ "Violently hostile, immediate attack", 
+    "Hostile, immediate action", "Uncertain but 55% prone toward negative", 
+    "Neutral - uninterested - uncertain", "Uncertain but 55% prone toward positive",
+    "Friendly, immediate action", "Enthusiastically friendly, immediate acceptance" ]
+  
+  puts "NPC/Monster Reaction: #{reaction.shuffle.first} "
+end
+
+def place
+  puts "ORACLE: Place"
+
+  o = Oracle.new('Place')
+  puts o.call_oracle
+
+  d = Oracle.new('Place_Descriptor')
+  puts d.call_oracle
+end
+
+def weather
+  puts "ORACLE: Weather"
+
+  o = Oracle.new('Weather')
+  puts o.call_oracle
+end
+
+def seeds
+  puts "ORACLE: Story Seeds
+  How will your adventure begin? Choose from this Oracle to send your heroes on an epic quest."
+
+  o = Oracle.new('Seed')
+  puts o.call_oracle
+end

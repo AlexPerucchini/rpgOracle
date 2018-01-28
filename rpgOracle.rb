@@ -4,28 +4,33 @@
 # author alex.perucchini
 # randomizes RPG elements for solo play
 # requires: https://github.com/piotrmurach/
-require "./source/Oracles"
-require "tty-prompt"
+require './source/Oracles'
+require 'tty-prompt'
 
 prompt = TTY::Prompt.new
-puts "===================================================================================="
-prompt.say "Welcome to the rpgOracle. Your Gateway to solo adventures!"
-puts "===================================================================================="
-
+puts "
+*******************************************************************************************
+************************************* THE RPG ORACLE **************************************
+***************************** Your Gateway To Solo Adventures! ****************************
+*******************************************************************************************
+"
 begin
   loop do
-    prompt.select("Choose the Oracle(s) to consult? Select Quit to exit the program... ", cycle: true) do |menu|
-      menu.choice 'Action', -> { action }
+    prompt.select("Consult an Oracle. Quit to exit the program... ", echo: true,  cycle: true, per_page: 10) do |menu|
+      menu.choice 'Action & Theme', -> { action_theme }
       menu.choice 'Combat ', -> { combat }
       menu.choice 'Goal', -> { goal }
-      menu.choice 'Theme', -> { theme }
+      menu.choice 'Mystic Backlash', -> { mystic_backlash }
+      menu.choice 'NPC Reaction', -> { npc_reaction }
+      menu.choice 'Place', -> { place }
+      menu.choice 'Story Seeds', -> { seeds }
       menu.choice 'Twist', -> { twist }
-      menu.choice 'Quit' , -> { exit }
+      menu.choice 'Weather', -> { weather }
+      menu.choice 'Quit', -> { exit }
     end
-    puts "===================================================================================="
+    puts "******************************************************************************************** "
   end
 end
-
 
 
 
