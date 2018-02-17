@@ -12,16 +12,14 @@ class Oracle
 
   def call_oracle
     begin
-      db = SQLite3::Database.open "./database/rpgOracle.db"
+      db = SQLite3::Database.open './database/rpgOracle.db'
       stm = db.prepare "SELECT * FROM #{@name}"
-      rs = stm.execute   
+      rs = stm.execute
 
-      #take the result-set convert to an array and randomize the output
-      return "#{@name.upcase} -> #{rs.to_a.sample}"
-              
-    rescue SQLite3::Exception => e 
+      # take the result-set convert to an array and randomize the output
+      return "#{@name.capitalize} -> #{rs.to_a.sample}"
+    rescue SQLite3::Exception => e
       puts "Exception! #{e}"
-  
     ensure
       stm.close if stm
       db.close if db
