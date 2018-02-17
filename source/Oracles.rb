@@ -55,7 +55,7 @@ def npc_reaction
     "Neutral - uninterested - uncertain", "Uncertain but 55% prone toward positive",
     "Friendly, immediate action", "Enthusiastically friendly, immediate acceptance" ]
   
-  puts "NPC/Monster reaction -> #{reaction.shuffle.first} "
+  puts "NPC/Monster reaction -> #{reaction.sample} "
 end
 
 def place
@@ -104,7 +104,6 @@ def question
   An additional negative outcome occurs with a 'No But' or 'Yes But'"
 
   questions = ["No and", "No", "No But", "Yes But", "Yes", "Yes And"].sample
-  
   outcomes = [ "Nothing significant", "Trap or some obstacle", "Unique feature, helpful",
     "Unique feature, hurtful choose the Twist Oracle. If this is a magic spell consult the 'Mystic Backlash' Oracle", "NPC  roll 1d6 (1-3 friendly, 4-5 neutral, 6 not friendly)", 
     "Monster roll 1d6 (1 friendly, 2-3 neutral, 4-6 not friendly)" ].sample
