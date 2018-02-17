@@ -16,19 +16,20 @@ puts "
 "
 begin
   loop do
-    prompt.select("Consult an Oracle. Quit to exit the program... ", echo: true,  cycle: true, per_page: 10) do |menu|
-      menu.choice 'Action & Theme', -> { action_theme }
-      menu.choice 'Combat ', -> { combat }
-      menu.choice 'Goal', -> { goal }
-      menu.choice 'Mystic Backlash', -> { mystic_backlash }
-      menu.choice 'NPC Reaction', -> { npc_reaction }
-      menu.choice 'Place', -> { place }
-      menu.choice 'Story Seeds', -> { seeds }
-      menu.choice 'Twist', -> { twist }
-      menu.choice 'Weather', -> { weather }
-      menu.choice 'Quit', -> { exit }
+    prompt.select('Consult an Oracle. Quit to exit the program...', echo: true, cycle: true, per_page: 20) do |menu|
+      menu.choice 'Action/Theme/Goal',  -> { action_theme_goal }
+      menu.choice 'Combat ',            -> { combat }
+      menu.choice 'Mystic Backlash',    -> { mystic_backlash }
+      menu.choice 'NPC Reaction',       -> { npc_reaction }
+      menu.choice 'Place',              -> { place }
+      menu.choice 'Story Seeds',        -> { seed }
+      menu.choice 'Twist',              -> { twist }
+      menu.choice 'Question',           -> { question }
+      menu.choice 'Weather',            -> { weather }
+      menu.choice 'Game Credits',       -> { credits }
+      menu.choice 'Quit',               -> { exit } # non-existent method exits the program
     end
-    puts "******************************************************************************************** "
+    puts '******************************************************************************************** '
   end
 end
 
