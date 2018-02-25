@@ -28,20 +28,6 @@ def combat
   puts o.call_oracle
 end
 
-def twist
-  puts 'Twist - Use this oracle to introduce a narrative surprise or revelation. That is your cue to make something dramatic happen.'
-
-  o = Oracle.new('Twist')
-  puts o.call_oracle
-end
-
-def mystic_backlash
-  puts 'Mystic Backlash - Those who deal in magic may find themselves at the mercy of chaos.'
-
-  o = Oracle.new('Mystic_Backlash')
-  puts o.call_oracle
-end
-
 def npc_reaction
   puts "ORACLE: NPCs or Monster Reaction
   How will an NPC or monster react? Find out..."
@@ -88,7 +74,7 @@ def town
   prefix = %w(Lost Bleak Green Raven Red Great Low Storm Mourn Stone Lost Rock
               Sword Thorn Wolf Gray Axe Bridge Bleak White Black New Grim High Shield Frost Raven)
 
-  suffix = %W(moor ford  watch wood stone fall(s) field bridge cairn hall 
+  suffix = %w(moor ford watch wood stone falls field bridge cairn hall
               rock frost home crag hope ridge haven river hill mark land mount
               brook stead wick)
   puts "Town or settlement -> #{prefix.sample}#{suffix.sample}"
@@ -115,7 +101,8 @@ end
 
 def credits
   puts " The rpgOracle would not have been possible without the following awesome resources:
-  - Sol1um
   - IronSworn
+  - Sol1um
+  - Zweihander
   "
 end
