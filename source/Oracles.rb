@@ -5,7 +5,7 @@
 require './source/Oracle'
 
 def action_theme_goal
-  puts 'Theme, Action, Goal - Use this oracle to set a scene and inspire an event for your heroes or NPCs.'
+  puts 'Theme, Action, Goal - Use this oracle to set a scene and inspire an event for your heroes or NPCs...'
 
   a = Oracle.new('Action')
   puts a.call_oracle
@@ -21,16 +21,14 @@ def action_theme_goal
 end
 
 def combat
-  puts "Combat - Use this oracle to help inspire an action for an NPC in combat. When you’re not sure what your foe will do next,
-  particularly when they have initiative, and interpret the result as appropriate to your foe and the situation."
+  puts "Use this oracle to help inspire an action for an NPC in combat. When you are not sure what your foe will do next,\n particularly when they have initiative, and interpret the result as appropriate to your foe and the situation..."
 
   o = Oracle.new('Combat')
   puts o.call_oracle
 end
 
 def npc_reaction
-  puts "ORACLE: NPCs or Monster Reaction
-  How will an NPC or monster react? Find out..."
+  puts "How will an NPC or monster react? Find out..."
 
   reaction = ['Violently hostile, immediate attack',
               'Hostile, immediate action',
@@ -57,14 +55,14 @@ def place
 end
 
 def weather
-  puts 'Weather - this oracle will give you the current weather...'
+  puts 'Generate weather...'
 
   o = Oracle.new('Weather')
   puts o.call_oracle
 end
 
 def seed
-  puts 'Story Seeds- How will your adventure begin? Choose from this Oracle to send your heroes on an epic quest.'
+  puts 'How will your adventure begin? Choose from this Oracle to send your heroes on an epic quest...'
 
   o = Oracle.new('Seed')
   puts o.call_oracle
@@ -81,13 +79,12 @@ def town
 end
 
 def question
-  puts "Question -  Ask a question that has a yes or no answer, it is important to keep it simple and able to be answered. 
+  puts "Ask a question that has a yes or no answer, it is important to keep it simple and able to be answered. 
   Do I encounter a trap? Are guards present? 'And' results are favorable. An additional negative outcome occurs with a 'No But' or 'Yes But'"
 
-  questions = ['No and', 'No', 'No But', 'Yes But', 'Yes', 'Yes And'].sample
+  questions = ['No and something helpful ', 'No', 'No But', 'Yes But', 'Yes', 'Yes and something helpful'].sample
   outcomes = ['Nothing significant',
               'Trap or some  unexpected obstacle',
-              'Unique feature, helpful',
               "Unique feature, hurtful choose the Twist oracle. If this is a magic spell consult the 'Mystic Backlash' oracle", 
               'NPC(s) consult the NPCs tables',
               'Monster(s) consult the Monsters tables'].sample
